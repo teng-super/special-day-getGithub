@@ -240,7 +240,7 @@ int main() {
 
     cout << "拷贝 " << N << " 个字符串耗时：" << us_copy << " μs" << endl;
     cout << "移动 " << N << " 个字符串耗时：" << us_move << " μs" << endl;
-    cout << "加速比：" << (us_move > 0 ? us_copy / us_move : 999) << "×" << endl;
+    cout << "加速比：" << (us_move > 0 ? us_copy / us_move : static_cast<long long>(N)) << "×" << endl;
     cout << "original.size()=" << original.size() << " (被移走后为0)" << endl;
     cout << "moved.size()=" << moved.size() << endl;
 

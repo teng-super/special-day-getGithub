@@ -380,9 +380,10 @@ public:
         if (total == 0) return;
 
         const char* labels[] = {"<60", "60-69", "70-79", "80-89", "90-100"};
+        constexpr int MAX_BAR_WIDTH = 30;
         cout << "\n成绩分布（共 " << total << " 门课）：" << endl;
         for (int i = 0; i < 5; i++) {
-            int bars = dist[i] * 30 / max(1, total);
+            int bars = dist[i] * MAX_BAR_WIDTH / max(1, total);
             cout << setw(8) << left << labels[i] << " | "
                  << string(bars, '*') << " " << dist[i]
                  << " (" << fixed << setprecision(1)
